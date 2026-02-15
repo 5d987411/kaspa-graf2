@@ -14,7 +14,7 @@ app.post('/run-cmd', (req, res) => {
     return res.json({ error: 'No command provided' });
   }
 
-  const cliPath = '/home/cliff/kaspa-graffiti/target/release/kaspa-graffiti-cli';
+  const cliPath = '/home/cliff/kaspa-graf2/target/release/kaspa-graffiti-cli';
   const fullCmd = `${cliPath} ${cmd}`;
   
   console.log('Executing:', fullCmd);
@@ -40,5 +40,5 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Kaspa CLI Test Console: http://localhost:${PORT}`);
-  console.log(`CLI Path: /home/cliff/kaspa-graffiti/target/release/kaspa-graffiti-cli`);
+  console.log(`CLI Path: /home/cliff/kaspa-graf2/target/release/kaspa-graffiti-cli`);
 });

@@ -70,9 +70,9 @@ function App() {
       const seed = await walletHdGenerate();
       setHdWallet(seed);
       setHdSeed(seed.seed);
-      showStatus('success', 'HD wallet generated! Save your seed phrase.');
+      showStatus('success', 'KG wallet generated! Save your seed phrase.');
     } catch (error) {
-      showStatus('error', `Failed to generate HD wallet: ${error}`);
+      showStatus('error', `Failed to generate KG wallet: ${error}`);
     }
     setIsLoading(false);
   };
@@ -86,10 +86,10 @@ function App() {
     try {
       const loaded = await walletHdLoad(hdSeed.trim());
       setHdWallet(loaded);
-      showStatus('success', 'HD wallet loaded successfully!');
+      showStatus('success', 'KG wallet loaded successfully!');
       setActiveTab('hdwallet');
     } catch (error) {
-      showStatus('error', `Failed to load HD wallet: ${error}`);
+      showStatus('error', `Failed to load KG wallet: ${error}`);
     }
     setIsLoading(false);
   };
@@ -170,7 +170,7 @@ function App() {
           className={`tab ${activeTab === 'hdwallet' ? 'active' : ''}`}
           onClick={() => setActiveTab('hdwallet')}
         >
-          HD Wallet
+          KG Wallet
         </button>
         <button
           className={`tab ${activeTab === 'status' ? 'active' : ''}`}
@@ -288,7 +288,7 @@ function App() {
       {activeTab === 'hdwallet' && (
         <div className="card">
           <div className="card-header">
-            <h2 className="card-title">HD Wallet</h2>
+            <h2 className="card-title">KG Wallet</h2>
           </div>
 
           <div className="btn-group" style={{ marginBottom: 24 }}>
@@ -297,12 +297,12 @@ function App() {
               onClick={handleHdGenerate}
               disabled={isLoading}
             >
-              {isLoading ? 'Generating...' : 'Generate New HD Wallet'}
+              {isLoading ? 'Generating...' : 'Generate New KG Wallet'}
             </button>
           </div>
 
           <div className="form-group">
-            <label>Or Load HD Wallet from Seed</label>
+            <label>Or Load KG Wallet from Seed</label>
             <textarea
               placeholder="Enter your 64-character seed hex"
               value={hdSeed}
@@ -317,7 +317,7 @@ function App() {
               onClick={handleHdLoad}
               disabled={isLoading || !hdSeed.trim()}
             >
-              {isLoading ? 'Loading...' : 'Load HD Wallet'}
+              {isLoading ? 'Loading...' : 'Load KG Wallet'}
             </button>
           </div>
 
@@ -446,7 +446,7 @@ function App() {
       <footer style={{ textAlign: 'center', marginTop: 32, color: 'var(--text-muted)' }}>
         <p>KaspaGraffiti v0.2.0 - Wallet Management & Address Derivation</p>
         <p style={{ fontSize: '0.875rem', marginTop: 8 }}>
-          HD Wallet support enabled - BIP32/BIP44 compatible
+          KG Wallet support enabled - BIP32/BIP44 compatible
         </p>
       </footer>
     </div>
